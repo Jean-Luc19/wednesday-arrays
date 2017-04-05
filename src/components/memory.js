@@ -1,4 +1,4 @@
-const memory = new Float64Array(1024);
+const memory = new Float64Array(1024*3);
 const head = 0;
 
 const allocate = function(size) {
@@ -38,6 +38,18 @@ const get = function(ptr) {
 const set = function(ptr, value) {
     memory[ptr] = value;
 };
+
+/* array with 5 elements we want to remove item and index 1, this.ptr is 0
+memory.copy(to=1, from=2, size=3)
+else if (from > to) {
+    // Iterate forwards
+    for (let i=0; i<3; i++) {
+        set(1 + i, get(2 + i));
+    } >>> set(1, 2)
+}
+
+
+*/
 
 exports.allocate = allocate;
 exports.free = free;
