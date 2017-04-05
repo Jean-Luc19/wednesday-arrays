@@ -1,5 +1,5 @@
 const memory = new Float64Array(1024);
-const head = 0;
+let head = 0;
 
 const allocate = function(size) {
     if (head + size > memory.length) {
